@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Cross SDK test</title>
+</head>
+<body>
+<h1>Applitools</h1>
+<div style="display: flex;">
+    <div id="overflowing-div" style="width: 300px; height: 180px; overflow: hidden; border: 2px solid black;">
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+        HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+        IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+        JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+        KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+        NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+        OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+    </div>
+    <div style="padding-left: 20px;">
+        <form novalidate="" class="sample-form ng-pristine ng-valid ng-valid-email">
+            <label>Name: <input type="text" ng-model="user.name" name="name" class="ng-pristine ng-untouched ng-valid"></label><br>
+            <label>E-mail: <input type="email" ng-model="user.email" name="email"
+                                  class="ng-pristine ng-untouched ng-valid ng-valid-email"></label><br>
+            <input type="submit" ng-click="update(user)" value="Save" id="submit-form">
+        </form>
+        <!-- ngIf: !master.email -->
+        <pre ng-if="!master.email" class="ng-binding ng-scope"></pre><!-- end ngIf: !master.email -->
+        <!-- ngIf: master.email -->
+    </div>
+</div>
+<br>
+<div id="overflowing-div-image" style="width: 300px; height: 180px; overflow: scroll; border: 2px solid red;">
+    <img src="./index_files/minions-800x500.jpg">
+</div>
+<br>
+<br>
+<iframe name="frame1" src="./index_files/frame.html" style="position: relative; left: 50px;" width="500px"
+        height="400px"></iframe>
+
+<script>
+  var app = angular.module("htmlPagesApp", []);
+  app.controller('myCtrl', ['$scope', function ($scope) {
+    $scope.master = {};
+
+    $scope.update = function (user) {
+      $scope.master = angular.copy(user);
+    };
+  }]);
+</script>
+
+
+</body>
+</html>
