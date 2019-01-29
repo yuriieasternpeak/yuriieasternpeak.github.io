@@ -1,0 +1,9 @@
+.frame1 {
+    position: relative; left: 20px;
+}
+
+.frame2 {
+    position: relative;
+    left: 40px;
+    border: red;
+}
