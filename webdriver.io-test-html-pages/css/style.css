@@ -1,5 +1,12 @@
 .frameMain {
     position: relative;
     left: 50px;
-    border: blue;
+    border: blue solid;
+}
+
+.overflowing-div-image {
+    width: 300px;
+    height: 180px;
+    overflow: scroll;
+    border: 2px solid red;
 }

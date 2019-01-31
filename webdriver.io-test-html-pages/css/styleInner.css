@@ -5,5 +5,5 @@
 .frame2 {
     position: relative;
     left: 40px;
-    border: red;
+    border: red solid;
 }
